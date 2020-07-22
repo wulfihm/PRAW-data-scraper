@@ -11,12 +11,14 @@ import datetime as dt
 import sys
 import os
 from threading import Timer
+config = json.load(open('config.json'))
 
 #takes in tf; time frame to scrape from
 def dataget(tf):
     ### END OF PREPROCESS ###
-    reddit = praw.Reddit(client_id='yourID', client_secret='yourSecret',user_agent='your agent name')
-
+    reddit = praw.Reddit(client_id=config["reddit"]["clientid"],
+                         client_secret=config["reddit"]["clientsecret"],
+                         user_agent=config["reddit"]["useragent"])
     """
     #Get top posts from subreddit
     #Ex: 'all' will scrape all subreddits, 'Machinelearning' will scrape ML subreddit

@@ -1,0 +1,7 @@
+{
+  "reddit": {
+    "clientid": "clientID",
+    "clientsecret": "clientSecret",
+    "useragent": "userAgent"
+  }
+}
